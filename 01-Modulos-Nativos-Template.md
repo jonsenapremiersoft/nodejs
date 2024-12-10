@@ -73,42 +73,6 @@ async function gerarHTML(templatePath, dadosPath, outputPath) {
 }
 ```
 
-### Sugestões para Expandir o Exercício:
-
-1. Adicionar suporte a loops:
-```html
-{{#each produtos}}
-    <li>{{nome}} - R$ {{preco}}</li>
-{{/each}}
-```
-
-2. Adicionar suporte a condicionais:
-```html
-{{#if premium}}
-    <span class="badge">Premium</span>
-{{/if}}
-```
-
-3. Permitir includes/partials:
-```html
-{{> header}}
-<div class="content">
-    <!-- conteúdo -->
-</div>
-{{> footer}}
-```
-
-4. Adicionar formatação de dados:
-```html
-<p>Data: {{formatDate data "DD/MM/YYYY"}}</p>
-<p>Preço: {{formatMoney preco}}</p>
-```
-
-5. Criar uma CLI para uso do sistema:
-```bash
-node template-cli.js --template=email.html --data=user.json --output=resultado.html
-```
-
 ### Dicas de Implementação:
 
 1. Use expressões regulares para encontrar os padrões de substituição
