@@ -200,20 +200,26 @@ async function buscarDadosComRetry() {
 ### Async Iterators
 
 ```javascript
+function timeout(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 // Gerador assíncrono
 async function* geradorDeDados() {
-    for (let i = 0; i < 5; i++) {
-        await timeout(1000);
-        yield `Dado ${i}`;
-    }
+  for (let i = 0; i < 5; i++) {
+    await timeout(1000)
+    yield `Dado ${i}`
+  }
 }
 
 // Consumindo o gerador
 async function consumirDados() {
-    for await (const dado of geradorDeDados()) {
-        console.log(dado);
-    }
+  for await (const dado of geradorDeDados()) {
+    console.log(dado)
+  }
 }
+
+consumirDados()
 ```
 
 ### AbortController
