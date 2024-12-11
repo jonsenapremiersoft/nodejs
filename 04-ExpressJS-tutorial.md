@@ -1,10 +1,4 @@
-# Tutorial de Express.js para Iniciantes
-
-Express.js é um framework minimalista e flexível para Node.js, amplamente utilizado para construir APIs e aplicativos web. Neste tutorial, abordaremos os conceitos básicos para você começar a desenvolver com Express.js usando práticas modernas.
-
-## Pré-requisitos
-- Conhecimentos básicos de JavaScript e Node.js.
-- Node.js instalado em sua máquina. [Baixar Node.js](https://nodejs.org/)
+# Tutorial básico de Express.js
 
 ## Passo 1: Configurando o Projeto
 1. Crie uma pasta para o seu projeto e navegue até ela:
