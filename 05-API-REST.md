@@ -1,6 +1,6 @@
-# Introdução às APIs REST
+# APIs REST
 
-## 1. O que é uma API?
+## O que é uma API?
 
 Uma API (Interface de Programação de Aplicações) é como um "cardápio" de funções que um sistema oferece para outros sistemas. Imagine um restaurante:
 - O cliente (outro sistema) faz pedidos
@@ -8,27 +8,78 @@ Uma API (Interface de Programação de Aplicações) é como um "cardápio" de f
 - A cozinha (seu sistema) processa o pedido
 - O garçom (API) entrega o resultado ao cliente
 
-## 2. O que significa REST?
+## O que é REST?
 
-REST (Representational State Transfer) é um conjunto de regras para criar APIs. É como um "manual de boas práticas" que nos ajuda a criar APIs organizadas e padronizadas.
+REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos, criado por Roy Fielding em 2000. É um conjunto de princípios e restrições que, quando seguidos, permitem a criação de aplicações web escaláveis e de fácil manutenção.
 
-### As principais regras do REST são:
+## Princípios Fundamentais do REST
 
-1. **Separação Cliente-Servidor**
-   - O cliente não precisa saber como o servidor funciona por dentro
-   - O servidor não precisa saber quem é o cliente
+### 1. Cliente-Servidor
+- Separação clara entre o cliente (interface/frontend) e o servidor (backend/dados)
+- Permite que ambos evoluam independentemente
+- Melhora a portabilidade e escalabilidade
 
-2. **Sem Estado (Stateless)**
-   - Cada requisição deve conter todas as informações necessárias
-   - O servidor não guarda informações entre requisições
-   - É como se cada pedido fosse o primeiro pedido
+### 2. Stateless (Sem Estado)
+- Cada requisição do cliente deve conter todas as informações necessárias
+- O servidor não mantém estado entre requisições
+- Cada requisição é completamente independente
 
-3. **Padronização de Interface**
-   - Usar URLs para identificar recursos
-   - Usar métodos HTTP corretamente
-   - Respostas em formatos padrão (geralmente JSON)
+### 3. Cache
+- Respostas devem ser marcadas como cacheáveis ou não
+- Melhora a eficiência e escalabilidade
+- Reduz a latência percebida pelo usuário
 
-## 3. Métodos HTTP em Detalhes
+### 4. Interface Uniforme
+- Identificação de recursos através de URIs
+- Manipulação de recursos através de suas representações
+- Mensagens auto-descritivas
+- HATEOAS (Hypermedia as the Engine of Application State)
+
+
+## Métodos HTTP em APIs RESTful
+
+### GET
+- Recupera recursos
+- Não deve modificar dados
+- Exemplo: `GET /api/usuarios/123`
+
+### POST
+- Cria novos recursos
+- Enviado com dados no corpo da requisição
+- Exemplo: `POST /api/usuarios`
+
+### PUT
+- Atualiza um recurso existente completamente
+- Substitui todas as propriedades
+- Exemplo: `PUT /api/usuarios/123`
+
+### PATCH
+- Atualiza parcialmente um recurso
+- Modifica apenas as propriedades enviadas
+- Exemplo: `PATCH /api/usuarios/123`
+
+### DELETE
+- Remove um recurso
+- Exemplo: `DELETE /api/usuarios/123`
+
+## Códigos de Status HTTP
+
+### 2xx - Sucesso
+- 200: OK
+- 201: Created
+- 204: No Content
+
+### 4xx - Erro do Cliente
+- 400: Bad Request
+- 401: Unauthorized
+- 404: Not Found
+
+### 5xx - Erro do Servidor
+- 500: Internal Server Error
+- 503: Service Unavailable
+
+
+## Métodos HTTP em Detalhes
 
 ### GET - Para buscar informações
 ```javascript
@@ -296,6 +347,11 @@ app.listen(PORT, () => {
 5. **Use nomes no plural para coleções**
    - `/books` em vez de `/book`
    - `/users` em vez de `/user`
+  
+6. Use substantivos para recursos, não verbos
+   - Bom: `/api/usuarios`
+   - Ruim: `/api/getUsuarios`
+
 
 ## 7. Exercício Prático
 
