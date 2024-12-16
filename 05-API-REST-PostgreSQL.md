@@ -260,7 +260,7 @@ GET http://localhost:3000/api/livros
 3. **Deletar um livro**
    - Crie uma rota DELETE `/api/livros/:id`
 
-## Sugestões de Melhorias para Iniciantes
+## Sugestões de Melhorias
 
 1. **Validações Básicas**
    - Verifique se título e autor não estão vazios
