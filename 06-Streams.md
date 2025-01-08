@@ -131,17 +131,6 @@ servidor.listen(3000, () => {
 });
 ```
 
-## Exercícios Práticos para Fixação
-
-1. **Exercício Básico**: 
-   Crie um programa que leia um arquivo de texto e mostre seu conteúdo no console, usando streams.
-
-2. **Exercício Intermediário**: 
-   Crie um programa que copie um arquivo, mas transforme todo o texto em MAIÚSCULAS durante a cópia.
-
-3. **Exercício Avançado**: 
-   Crie um servidor web que permita fazer upload de arquivos grandes usando streams.
-
 ## Dicas Importantes
 
 1. **Sempre trate erros**: Suas streams podem dar erro! Use `.on('error', ...)` para tratá-los.
